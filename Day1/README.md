@@ -186,3 +186,13 @@ root@ubuntu2:~# <b>exit</b>
 logout
 Connection to localhost closed.
 </pre>
+
+
+## Lab - Running ansible ad-hoc commands using static inventory
+```
+cd ~/ansible-jan-2023
+git pull
+
+cd Day1/Ansible
+ansible -i inventory all -m ping
+```

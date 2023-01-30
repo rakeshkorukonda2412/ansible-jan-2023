@@ -130,11 +130,11 @@ ssh -p 2001 root@localhost
 
 Expected output
 <pre>
-jegan@tektutor.org:~/ansible-jan-2023/Day1$ <b>sh -p 2001 root@localhost</b>
+jegan@tektutor.org:~/ansible-jan-2023/Day1$ <b>ssh -p 2001 root@localhost</b>
 The authenticity of host '[localhost]:2001 ([127.0.0.1]:2001)' can't be established.
 ED25519 key fingerprint is SHA256:ePS/H9aTYQiQP9uX7HwfcEltipzTw67CFBLMdMxFxaw.
 This key is not known by any other names
-Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Are you sure you want to continue connecting (yes/no/[fingerprint])? <b>yes</b>
 Warning: Permanently added '[localhost]:2001' (ED25519) to the list of known hosts.
 Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 5.15.0-58-generic x86_64)
 

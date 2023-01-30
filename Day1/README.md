@@ -102,7 +102,7 @@ docker build -t tektutor/ansible-ubuntu:latest .
 docker images
 ```
 
-## Creating two ubuntu containers ( ansible nodes machines )
+### Creating two ubuntu containers ( ansible nodes machines )
 ```
 docker run -d --name ubuntu1 --hostname ubuntu1 -p 2001:22 -p 8001:80 tektutor/ansible-ubuntu:latest
 

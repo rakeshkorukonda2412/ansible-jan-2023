@@ -124,11 +124,13 @@ c21dc91e8bdf   tektutor/ansible-ubuntu:latest   "/usr/sbin/sshd -D"   14 seconds
 </pre>
 
 ### Testing if your ubuntu1 and ubuntu2 containers are prepared as per ansible requirement
-
+```
+ssh -p 2001 root@localhost
+```
 
 Expected output
 <pre>
-jegan@tektutor.org:~/ansible-jan-2023/Day1$ ssh -p 2001 root@localhost
+jegan@tektutor.org:~/ansible-jan-2023/Day1$ <b>sh -p 2001 root@localhost</b>
 The authenticity of host '[localhost]:2001 ([127.0.0.1]:2001)' can't be established.
 ED25519 key fingerprint is SHA256:ePS/H9aTYQiQP9uX7HwfcEltipzTw67CFBLMdMxFxaw.
 This key is not known by any other names
@@ -147,7 +149,7 @@ individual files in /usr/share/doc/*/copyright.
 Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
 applicable law.
 
-root@ubuntu1:~# exit
+root@ubuntu1:~# <b>exit</b>
 logout
 Connection to localhost closed.
 </pre>

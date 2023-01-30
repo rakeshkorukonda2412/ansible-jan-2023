@@ -122,3 +122,32 @@ CONTAINER ID   IMAGE                            COMMAND               CREATED   
 0c41e712ec32   tektutor/ansible-ubuntu:latest   "/usr/sbin/sshd -D"   3 seconds ago    Up 2 seconds    0.0.0.0:2002->22/tcp, :::2002->22/tcp, 0.0.0.0:8002->80/tcp, :::8002->80/tcp   ubuntu2
 c21dc91e8bdf   tektutor/ansible-ubuntu:latest   "/usr/sbin/sshd -D"   14 seconds ago   Up 13 seconds   0.0.0.0:2001->22/tcp, :::2001->22/tcp, 0.0.0.0:8001->80/tcp, :::8001->80/tcp   ubuntu1
 </pre>
+
+### Testing if your ubuntu1 and ubuntu2 containers are prepared as per ansible requirement
+
+
+Expected output
+<pre>
+jegan@tektutor.org:~/ansible-jan-2023/Day1$ ssh -p 2001 root@localhost
+The authenticity of host '[localhost]:2001 ([127.0.0.1]:2001)' can't be established.
+ED25519 key fingerprint is SHA256:ePS/H9aTYQiQP9uX7HwfcEltipzTw67CFBLMdMxFxaw.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[localhost]:2001' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 5.15.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+root@ubuntu1:~# exit
+logout
+Connection to localhost closed.
+</pre>

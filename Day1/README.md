@@ -83,3 +83,13 @@ sudo apt install software-properties-common
 sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
 ```
+
+## Lab - Building a customer Ubuntu Docker Image to create Ubuntu Ansible Node
+```
+cd ~/ansible-jan-2023
+git pull
+
+cd Day1/CustomDockerImages/ubuntu
+ssh-keygen
+docker build -t tektutor/ansible-ubuntu:latest .
+```

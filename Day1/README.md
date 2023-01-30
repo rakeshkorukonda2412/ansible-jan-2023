@@ -196,3 +196,22 @@ git pull
 cd Day1/Ansible
 ansible -i inventory all -m ping
 ```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/ansible-jan-2023/Day1/Ansible$ <b>ansible -i inventory all -m ping</b>
+ubuntu1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+ubuntu2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+</pre>

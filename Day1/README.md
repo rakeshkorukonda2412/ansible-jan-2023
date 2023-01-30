@@ -75,3 +75,11 @@
   - Software requirements
     - Python should be there
     - SSH Server should be installed for connectivity
+
+## Installing Anisble in Ubuntu
+```
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible
+```

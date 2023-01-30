@@ -76,7 +76,7 @@
     - Python should be there
     - SSH Server should be installed for connectivity
 
-## Installing Anisble in Ubuntu
+## Installing Ansible in Ubuntu
 ```
 sudo apt update
 sudo apt install software-properties-common

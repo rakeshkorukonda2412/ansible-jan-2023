@@ -98,4 +98,5 @@ git pull
 cd Day1/CustomDockerImages/ubuntu
 ssh-keygen
 docker build -t tektutor/ansible-ubuntu:latest .
+docker images
 ```

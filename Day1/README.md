@@ -32,6 +32,7 @@
 
 ## Ansible
 - agentless i.e you don't need to install any proprietary tools in order to perform automated installations on the Ansible nodes
+- follows a PUSH based architecture
 - doesn't follow client/server architecture
 - the machine where Ansible is installed is called as Ansible Controller Machine(ACM)
 - this can only be Linux and Unix like OS
@@ -56,3 +57,21 @@
     - User Management
     - Support from Red Hat
     - You could see the history of playbook executions and logs, metrics ,etc in GUI
+
+
+## What is an Ansible Node?
+- is the server where automated software installations must be performed
+- Ansible Nodes can be a
+  - Windows machine
+  - Mac OS-X
+  - Unix
+  - Linux ( all distributions )
+  - Switches & Routers, etc.,
+- Windows Ansible Nodes
+  - software requirements
+    - Powershell should be there (.Net Framework)
+    - WinRM should be configured for connectivity
+- Unix/Mac/Linux Ansible Nodes
+  - Software requirements
+    - Python should be there
+    - SSH Server should be installed for connectivity

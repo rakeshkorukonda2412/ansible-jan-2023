@@ -101,3 +101,88 @@ cp ~/.ssh/id_rsa.pub authorized_keys
 docker build -t tektutor/ansible-ubuntu:latest .
 docker images
 ```
+
+### Creating two ubuntu containers ( ansible nodes machines )
+```
+docker run -d --name ubuntu1 --hostname ubuntu1 -p 2001:22 -p 8001:80 tektutor/ansible-ubuntu:latest
+
+docker run -d --name ubuntu2 --hostname ubuntu2 -p 2002:22 -p 8002:80 tektutor/ansible-ubuntu:latest
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/ansible-jan-2023/Day1$ <b>docker run -d --name ubuntu1 --hostname ubuntu1 -p 2001:22 -p 8001:80 tektutor/ansible-ubuntu:latest</b> 
+c21dc91e8bdfe8fd732fa623b970cdfb25db9249fa00311493d75ec82d2a2714
+
+jegan@tektutor.org:~/ansible-jan-2023/Day1$ <b>docker run -d --name ubuntu2 --hostname ubuntu2 -p 2002:22 -p 8002:80 tektutor/ansible-ubuntu:latest</b>
+0c41e712ec3299eaaa37b14fea72b6a2fb90a8bd71fdb9574fad45ffbf77ecf1
+
+jegan@tektutor.org:~/ansible-jan-2023/Day1$ <b>docker ps</b>
+CONTAINER ID   IMAGE                            COMMAND               CREATED          STATUS          PORTS                                                                          NAMES
+0c41e712ec32   tektutor/ansible-ubuntu:latest   "/usr/sbin/sshd -D"   3 seconds ago    Up 2 seconds    0.0.0.0:2002->22/tcp, :::2002->22/tcp, 0.0.0.0:8002->80/tcp, :::8002->80/tcp   ubuntu2
+c21dc91e8bdf   tektutor/ansible-ubuntu:latest   "/usr/sbin/sshd -D"   14 seconds ago   Up 13 seconds   0.0.0.0:2001->22/tcp, :::2001->22/tcp, 0.0.0.0:8001->80/tcp, :::8001->80/tcp   ubuntu1
+</pre>
+
+### Testing if your ubuntu1 and ubuntu2 containers are prepared as per ansible requirement
+SSH into the ubuntu1 ansible node
+```
+ssh -p 2001 root@localhost
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/ansible-jan-2023/Day1$ <b>ssh -p 2001 root@localhost</b>
+The authenticity of host '[localhost]:2001 ([127.0.0.1]:2001)' can't be established.
+ED25519 key fingerprint is SHA256:ePS/H9aTYQiQP9uX7HwfcEltipzTw67CFBLMdMxFxaw.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? <b>yes</b>
+Warning: Permanently added '[localhost]:2001' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 5.15.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+root@ubuntu1:~# <b>exit</b>
+logout
+Connection to localhost closed.
+</pre>
+
+SSH into ubuntu2 ansible node
+```
+ssh -p 2002 root@localhost
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/ansible-jan-2023/Day1$ <b>ssh -p 2002 root@localhost</b>
+The authenticity of host '[localhost]:2002 ([127.0.0.1]:2002)' can't be established.
+ED25519 key fingerprint is SHA256:ePS/H9aTYQiQP9uX7HwfcEltipzTw67CFBLMdMxFxaw.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:10: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? <b>yes</b>
+Warning: Permanently added '[localhost]:2002' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 5.15.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+root@ubuntu2:~# <b>exit</b>
+logout
+Connection to localhost closed.
+</pre>

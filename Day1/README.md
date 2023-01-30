@@ -90,7 +90,7 @@ cd ~
 git clone https://github.com/tektutor/ansible-jan-2023
 ```
 
-## Lab - Building a customer Ubuntu Docker Image to create Ubuntu Ansible Node
+## Lab - Building a custom Ubuntu Docker Image to create Ubuntu Ansible Node
 ```
 cd ~/ansible-jan-2023
 git pull

@@ -41,7 +41,7 @@ ansible-playbook install-nginx-playbook.yml
 ```
 
 Expected output
-<pre>
+```
 (jegan@tektutor.org)$ ansible-playbook install-nginx-playbook.yml 
 
 PLAY [This playbook will install nginx, configures web root folder, deploys custom web page] *****************************
@@ -98,5 +98,4 @@ ubuntu2                    : ok=6    changed=2    unreachable=0    failed=0    s
         <h1>OS - Ubuntu v16.04</h1>
     </body>
 </html>
-
-</pre>
+```

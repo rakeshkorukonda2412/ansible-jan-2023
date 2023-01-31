@@ -99,3 +99,8 @@ ubuntu2                    : ok=6    changed=2    unreachable=0    failed=0    s
     </body>
 </html>
 ```
+
+## Configuring a Windows Ansible Node
+```
+https://docs.ansible.com/ansible/latest/os_guide/windows_setup.html
+```

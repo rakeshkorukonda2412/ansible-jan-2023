@@ -104,3 +104,5 @@ ubuntu2                    : ok=6    changed=2    unreachable=0    failed=0    s
 ```
 https://docs.ansible.com/ansible/latest/os_guide/windows_setup.html
 ```
+
+## ⛹️‍♂️ Assignment - Write a playbook that will install Apache Tomcat web server, configures the web root folder and deploy a custom html page

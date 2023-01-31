@@ -1,8 +1,9 @@
 - name: This playbook will install nginx, configures web root folder, deploys custom web page
   hosts: all
-  vars_files:
-  - nginx_vars.yml
-
+  vars:
+  - provisioner_tool: Docker
+  - conf_mgr_tool: Ansible
+  - greeting_msg: DevOps!
   tasks:
   - name: Install nginx
     apt: name=nginx state=latest update_cache=yes

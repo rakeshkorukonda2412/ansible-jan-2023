@@ -1,0 +1,5 @@
+- name: Retrieve IP address of ansible node
+  shell: hostname -i
+  register: ip_address
+
+- debug: var=ip_address

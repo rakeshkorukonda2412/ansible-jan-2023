@@ -1,0 +1,9 @@
+    - name: Configure nginx web root folder
+      when: ansible_distribution == "Ubuntu" and ansible_os_family == "Debian" 
+      copy: src=default dest=/etc/nginx/sites-available/default 
+      register: config_changed
+
+    - debug: var=config_changed
+
+    - name: Create custom nginx web root folder
+      file: path=/var/html state=directory mode=0755

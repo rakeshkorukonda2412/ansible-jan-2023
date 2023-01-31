@@ -1,0 +1,3 @@
+- name: Restart nginx web server
+  when: config_changed.changed == true
+  shell: service nginx restart

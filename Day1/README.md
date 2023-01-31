@@ -76,6 +76,9 @@
     - Python should be there
     - SSH Server should be installed for connectivity
 
+## Ansible High-Level Architecture
+![Ansible Architecture](AnsibleHighLevelArchitecture.png)
+
 ## Installing Ansible in Ubuntu
 ```
 sudo apt update

@@ -1,5 +1,7 @@
 - name: This playbook demonstrates invoke ping module
   hosts: all
   tasks:
-  - name: Ping the ansible node
+  - name: Fist task - Ping
+    ping:
+  - name: Second task - Ping
     ping:

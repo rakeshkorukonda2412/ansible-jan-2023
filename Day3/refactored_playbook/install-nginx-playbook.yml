@@ -1,0 +1,16 @@
+- name: This playbook will install nginx, configures web root folder, deploys custom web page
+  hosts: all
+  vars_files:
+  - nginx_vars.yml
+
+  tasks:
+  - include_tasks: install-nginx-ubuntu.yml
+  - include_tasks: install-nginx-centos.yml
+
+  - include_tasks: configure-nginx-ubuntu.yml
+  - include_tasks: configure-nginx-centos.yml
+
+  - include_tasks: restart-nginx-ubuntu.yml
+  - include_tasks: restart-nginx-centos.yml
+
+  - include_tasks: deploy-custom-webpage.yml

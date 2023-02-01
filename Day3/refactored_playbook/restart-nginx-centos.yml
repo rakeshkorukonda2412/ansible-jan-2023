@@ -1,0 +1,9 @@
+- name: Check if nginx web server is already up and running
+  when: ansible_distribution == "CentOS" and ansible_os_family == "RedHat"
+  shell: curl localhost 
+  register: output
+  ignore_errors: true
+
+- name: Start the nginx web server service in CentOS 
+  when: ansible_distribution == "CentOS" and ansible_os_family == "RedHat" and output.rc != 0
+  shell: /usr/sbin/nginx 

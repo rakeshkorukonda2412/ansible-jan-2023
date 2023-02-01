@@ -313,3 +313,12 @@ cd Day3/loops/sequence
 ansible-playbook  provision-containers-playbook.yml
 ansible-playbook  provision-containers-playbook.yml --ask-become-pass
 ```
+
+## ⛹️ Lab - Building a docker image using Ansible Playbook
+```
+cd ~/ansible-jan-2023
+git pull
+
+cd Day3/build-docker-image/
+ansible-playbook build-docker-image-playbook.yml
+```

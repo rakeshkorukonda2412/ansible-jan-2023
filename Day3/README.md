@@ -44,7 +44,7 @@ ansible-playbook  install-nginx-playbook.yml
 
 Expected output
 ```
-(jegan@tektutor.org)$ <b>ansible-playbook install-nginx-playbook.yml</b>
+(jegan@tektutor.org)$ ansible-playbook install-nginx-playbook.yml
 
 PLAY [This playbook will install nginx, configures web root folder, deploys custom web page] *****************************
 
@@ -114,7 +114,7 @@ centos2                    : ok=7    changed=2    unreachable=0    failed=0    s
 ubuntu1                    : ok=6    changed=1    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
 ubuntu2                    : ok=6    changed=1    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
 
-(jegan@tektutor.org)$ <b>curl localhost:8003</b>
+(jegan@tektutor.org)$ curl localhost:8003
 <html>
     <head>
         <title>Welcome to DevOps!</title>
@@ -126,7 +126,7 @@ ubuntu2                    : ok=6    changed=1    unreachable=0    failed=0    s
         <h1>OS - CentOS v7.9</h1>
     </body>
 </html>
-(jegan@tektutor.org)$ <b>curl localhost:8004</b>
+(jegan@tektutor.org)$ curl localhost:8004
 <html>
     <head>
         <title>Welcome to DevOps!</title>
@@ -138,7 +138,7 @@ ubuntu2                    : ok=6    changed=1    unreachable=0    failed=0    s
         <h1>OS - CentOS v7.9</h1>
     </body>
 </html>
-(jegan@tektutor.org)$ <b>curl localhost:8001</b>
+(jegan@tektutor.org)$ curl localhost:8001
 <html>
     <head>
         <title>Welcome to DevOps!</title>
@@ -150,7 +150,7 @@ ubuntu2                    : ok=6    changed=1    unreachable=0    failed=0    s
         <h1>OS - Ubuntu v16.04</h1>
     </body>
 </html>
-(jegan@tektutor.org)$ <b>curl localhost:8002</b>
+(jegan@tektutor.org)$ curl localhost:8002
 <html>
     <head>
         <title>Welcome to DevOps!</title>

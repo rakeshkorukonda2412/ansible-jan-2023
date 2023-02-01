@@ -1,6 +1,6 @@
 # Day 3
 
-## Preparing a Custom CentOS Ansible Node Docker Image
+## ℹ️ Preparing a Custom CentOS Ansible Node Docker Image
 ```
 cd ~/ansible-jan-2023
 git pull

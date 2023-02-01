@@ -305,6 +305,11 @@ ansible-playbook  playbook.yml
 ```
 
 ## ⛹️ Lab - Using sequence loop in Ansible Playbook
+Anytime we perform admin related tasks like install/uninstall/upgrade, etc., we need to elevate the user to sudo user
+within the playbook.  This can be done by using become: yes flag within the playbook.
+
+In certain cases, you may also have to provie the ansible_become_user and ansible_become_password in the inventory.  If you don't prefer providing the become password in the plain text inventory you could as well use --ask-become-pass switch while running the playbook or you could use the ansible vault to the password in an encrypted file.
+
 ```
 cd ~/ansible-jan-2023
 git pull

@@ -1,0 +1,39 @@
+- name: This playbook will install nginx, configures web root folder, deploys custom web page
+  hosts: all
+  vars_files:
+  - nginx_vars.yml
+
+  tasks:
+  - name: Install nginx in Ubuntu
+    when: ansible_distribution == "Ubuntu" and ansible_os_family == "Debian"
+    apt: name=nginx state=latest update_cache=yes
+
+  - name: Install Extra packages for Enterprise Linux (EPEL) in CentOS 
+    when: ansible_distribution == "CentOS" and ansible_os_family == "RedHat"
+    yum: name=epel-release state=latest 
+
+  - name: Install nginx in CentOS 
+    when: ansible_distribution == "CentOS" and ansible_os_family == "RedHat"
+    yum: name=nginx state=latest 
+
+  - name: Configure nginx web root folder in Ubuntu
+    when: ansible_distribution == "Ubuntu" and ansible_os_family == "Debian"
+    copy: src=default dest=/etc/nginx/sites-available/default 
+
+  - name: Configure nginx web root folder in CentOS
+    when: ansible_distribution == "CentOS" and ansible_os_family == "RedHat"
+    copy: src=nginx.conf dest=/etc/nginx/nginx.conf 
+
+  - name: Create custom nginx web root folder
+    file: path=/var/html state=directory mode=0755
+
+  - name: Restart the nginx web server service in Ubuntu
+    when: ansible_distribution == "Ubuntu" and ansible_os_family == "Debian"
+    shell: service nginx restart
+
+  - name: Start the nginx web server service in CentOS 
+    when: ansible_distribution == "CentOS" and ansible_os_family == "RedHat"
+    shell: /usr/sbin/nginx 
+
+  - name: Deploy custom web page 
+    template: src=index.html.j2 dest=/var/html/index.html

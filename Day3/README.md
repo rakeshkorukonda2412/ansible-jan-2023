@@ -285,3 +285,30 @@ ansible-playbook  install-nginx-playbook.yml
 Expected output
 ```
 ```
+
+## Lab - Using list variables in Ansible Playbook
+```
+cd ~/ansible-jan-2023
+git pull
+
+cd Day3/loops/list
+ansible-playbook  playbook.yml
+```
+
+## Lab - Using dictionary variables in Ansible Playbook
+```
+cd ~/ansible-jan-2023
+git pull
+
+cd Day3/loops/dictionary
+ansible-playbook  playbook.yml
+```
+
+## Lab - Using list variables in Ansible Playbook
+```
+cd ~/ansible-jan-2023
+git pull
+
+cd Day3/loops/sequence
+ansible-playbook  playbook.yml
+```

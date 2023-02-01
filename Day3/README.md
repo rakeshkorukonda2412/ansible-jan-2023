@@ -163,3 +163,112 @@ ubuntu2                    : ok=6    changed=1    unreachable=0    failed=0    s
     </body>
 </html>
 ```
+
+## ⛹️‍♀️ Lab - Running the refactored playbook on Ubuntu and CentOS nodes
+```
+cd ~/ansible-jan-2023
+git pull
+
+cd Day3/refactored_playbook
+ansible-playbook  install-nginx-playbook.yml
+```
+
+Expected output
+```
+(jegan@tektutor.org)$ ansible-playbook install-nginx-playbook.yml 
+
+PLAY [This playbook will install nginx, configures web root folder, deploys custom web page] *****************************
+
+TASK [Gathering Facts] ***************************************************************************************************
+ok: [ubuntu2]
+ok: [centos1]
+ok: [ubuntu1]
+ok: [centos2]
+
+TASK [include_tasks] *****************************************************************************************************
+included: /home/jegan/ansible-jan-2023/Day3/refactored_playbook/install-nginx-ubuntu.yml for ubuntu1, ubuntu2, centos1, centos2
+
+TASK [Install nginx in Ubuntu] *******************************************************************************************
+skipping: [centos1]
+skipping: [centos2]
+ok: [ubuntu1]
+ok: [ubuntu2]
+
+TASK [include_tasks] *****************************************************************************************************
+included: /home/jegan/ansible-jan-2023/Day3/refactored_playbook/install-nginx-centos.yml for ubuntu1, ubuntu2, centos1, centos2
+
+TASK [Install Extra packages for Enterprise Linux (EPEL) in CentOS] ******************************************************
+skipping: [ubuntu1]
+skipping: [ubuntu2]
+ok: [centos1]
+ok: [centos2]
+
+TASK [Install nginx in CentOS] *******************************************************************************************
+skipping: [ubuntu1]
+skipping: [ubuntu2]
+ok: [centos1]
+ok: [centos2]
+
+TASK [include_tasks] *****************************************************************************************************
+included: /home/jegan/ansible-jan-2023/Day3/refactored_playbook/configure-nginx-ubuntu.yml for ubuntu1, ubuntu2, centos1, centos2
+
+TASK [Configure nginx web root folder in Ubuntu] *************************************************************************
+skipping: [centos1]
+skipping: [centos2]
+ok: [ubuntu2]
+ok: [ubuntu1]
+
+TASK [include_tasks] *****************************************************************************************************
+included: /home/jegan/ansible-jan-2023/Day3/refactored_playbook/configure-nginx-centos.yml for ubuntu1, ubuntu2, centos1, centos2
+
+TASK [Configure nginx web root folder in CentOS] *************************************************************************
+skipping: [ubuntu1]
+skipping: [ubuntu2]
+ok: [centos1]
+ok: [centos2]
+
+TASK [include_tasks] *****************************************************************************************************
+included: /home/jegan/ansible-jan-2023/Day3/refactored_playbook/restart-nginx-ubuntu.yml for ubuntu1, ubuntu2, centos1, centos2
+
+TASK [Restart the nginx web server service in Ubuntu] ********************************************************************
+skipping: [centos1]
+skipping: [centos2]
+changed: [ubuntu2]
+changed: [ubuntu1]
+
+TASK [include_tasks] *****************************************************************************************************
+included: /home/jegan/ansible-jan-2023/Day3/refactored_playbook/restart-nginx-centos.yml for ubuntu1, ubuntu2, centos1, centos2
+
+TASK [Check if nginx web server is already up and running] ***************************************************************
+skipping: [ubuntu1]
+skipping: [ubuntu2]
+changed: [centos1]
+changed: [centos2]
+
+TASK [Start the nginx web server service in CentOS] **********************************************************************
+skipping: [ubuntu1]
+skipping: [ubuntu2]
+skipping: [centos1]
+skipping: [centos2]
+
+TASK [include_tasks] *****************************************************************************************************
+included: /home/jegan/ansible-jan-2023/Day3/refactored_playbook/deploy-custom-webpage.yml for ubuntu1, ubuntu2, centos1, centos2
+
+TASK [Create custom nginx web root folder] *******************************************************************************
+ok: [ubuntu1]
+ok: [centos1]
+ok: [centos2]
+ok: [ubuntu2]
+
+TASK [Deploy custom web page] ********************************************************************************************
+ok: [ubuntu2]
+ok: [ubuntu1]
+ok: [centos1]
+ok: [centos2]
+
+PLAY RECAP ***************************************************************************************************************
+centos1                    : ok=14   changed=1    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+centos2                    : ok=14   changed=1    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+ubuntu1                    : ok=13   changed=1    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0   
+ubuntu2                    : ok=13   changed=1    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0
+```

@@ -1,0 +1,8 @@
+- name: Check if nginx web server is already up and running
+  shell: curl localhost 
+  register: output
+  ignore_errors: true
+
+- name: Start the nginx web server service in CentOS 
+  when: output.rc != 0
+  shell: /usr/sbin/nginx 

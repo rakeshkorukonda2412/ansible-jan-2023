@@ -1,0 +1,2 @@
+- name: Configure nginx web root folder in CentOS
+  copy: src=nginx.conf dest=/etc/nginx/nginx.conf 

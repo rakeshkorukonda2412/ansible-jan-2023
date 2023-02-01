@@ -295,7 +295,7 @@ cd Day3/loops/list
 ansible-playbook  playbook.yml
 ```
 
-## Lab - Using dictionary variables in Ansible Playbook
+## ⛹️ Lab - Using dictionary variables in Ansible Playbook
 ```
 cd ~/ansible-jan-2023
 git pull
@@ -304,7 +304,7 @@ cd Day3/loops/dictionary
 ansible-playbook  playbook.yml
 ```
 
-## Lab - Using sequence loop in Ansible Playbook
+## ⛹️ Lab - Using sequence loop in Ansible Playbook
 ```
 cd ~/ansible-jan-2023
 git pull

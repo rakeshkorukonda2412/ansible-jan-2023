@@ -33,7 +33,7 @@ logout
 Connection to localhost closed.
 </pre>
 
-## Running the playbook on Ubuntu and CentOS nodes
+## ⛹️‍♀️ Lab - Running the playbook on Ubuntu and CentOS nodes
 ```
 cd ~/ansible-jan-2023
 git pull

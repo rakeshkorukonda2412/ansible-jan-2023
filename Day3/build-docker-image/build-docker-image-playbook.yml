@@ -1,0 +1,27 @@
+- name: Builds a custom docker image
+  hosts: localhost
+  tasks:
+
+  - name: Delete any containers if exists
+    shell: docker rm -f $(docker ps -aq)
+    ignore_errors: true
+
+  - name: Remove existing image
+    shell: docker rmi tektutor/ansible-ubuntu:latest
+    ignore_errors: true
+
+  - name: Copy the public key to current directory
+    shell: cp ~/.ssh/id_rsa.pub authorized_keys
+
+  - name: Build ubuntu ansible node docker image
+    docker_image:
+      name: tektutor/ansible-ubuntu:latest
+      state: present
+      source: build
+      build:
+        dockerfile: Dockerfile
+        path: .
+        pull: no
+
+  - name: Delete the authorized_keys
+    shell: rm ./authorized_keys

@@ -1,5 +1,6 @@
 - name: Provisions containers
   hosts: localhost
+  become: yes
 
   tasks: 
   - name: Delete any containers that are already there in the system

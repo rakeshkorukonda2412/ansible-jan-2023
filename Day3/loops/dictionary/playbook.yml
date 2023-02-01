@@ -1,0 +1,11 @@
+- name: Demonstrates using dictionary variable and iterating thru the dictionary
+  hosts: localhost 
+
+  vars:
+  - software_tools_path:
+      jdk_path: "/usr/lib/java8"
+      m2_path:  "/usr/share/maven"
+
+  tasks: 
+  - debug: msg="{{item.key}} = {{item.value}}" 
+    with_dict: "{{software_tools_path}}"

@@ -1,0 +1,26 @@
+- name: Provisions containers
+  hosts: localhost
+
+  tasks: 
+  - name: Delete any containers that are already there in the system
+    shell: docker rm -f $(docker ps -aq)
+    ignore_errors: true
+
+#  - name: Install Python Package Manager(pip) in Ubuntu
+#    when: ansible_distribution == "Ubuntu"
+#    apt: name=python3-pip state=latest update_cache=yes
+
+  - name: Install Docker Python SDK in Ubuntu
+    when: ansible_distribution == "Ubuntu"
+    shell: pip install docker
+
+  - name: Create containers
+    docker_container:
+      name: "ubuntu-{{item}}"
+      hostname: "ubuntu-{{item}}"
+      image: "tektutor/ansible-ubuntu:latest"
+      state: started
+      ports:
+      - "2{{item}}:22"
+      - "8{{item}}:80"
+    with_sequence: start=1  end=10 format="%03d"

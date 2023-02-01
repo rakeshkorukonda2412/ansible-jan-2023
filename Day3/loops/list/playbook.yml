@@ -1,0 +1,21 @@
+- name: Demonstrates use of list variable and how to navigate a list 
+  hosts: all 
+  vars:
+  - software_tools:
+    - vim
+    - git
+
+  tasks:
+  - name: Install the software tools in Ubuntu
+    when: ansible_distribution == "Ubuntu"
+    apt: name="{{item}}" state=latest update_cache=yes
+    with_list: "{{software_tools}}"
+
+  - name: Install Extra Packages for Enterprise Linux(EPEL) in CentOS
+    when: ansible_distribution == "CentOS"
+    yum: name=epel-release state=latest
+
+  - name: Install the software tools in CentOS
+    when: ansible_distribution == "CentOS"
+    yum: name="{{item}}" state=latest update_cache=yes
+    with_list: "{{software_tools}}"

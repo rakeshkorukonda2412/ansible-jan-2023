@@ -6,7 +6,7 @@ cd ~/ansible-jan-2023
 git pull
 cd Day1/CustomDockerImages/centos
 cp ~/.ssh/id_rsa.pub authorized_keys
-docker build tektutor/ansible-centos:latest .
+docker build -t tektutor/ansible-centos:latest .
 docker images
 ```
 

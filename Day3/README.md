@@ -169,7 +169,7 @@ ubuntu2                    : ok=6    changed=1    unreachable=0    failed=0    s
 cd ~/ansible-jan-2023
 git pull
 
-cd Day3/refactored_playbook
+cd Day3/refactored_playbook-v1
 ansible-playbook  install-nginx-playbook.yml
 ```
 
@@ -271,4 +271,17 @@ centos1                    : ok=14   changed=1    unreachable=0    failed=0    s
 centos2                    : ok=14   changed=1    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
 ubuntu1                    : ok=13   changed=1    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0   
 ubuntu2                    : ok=13   changed=1    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0
+```
+
+## ⛹️‍♀️ Lab - Running the refactored playbook on Ubuntu and CentOS nodes
+```
+cd ~/ansible-jan-2023
+git pull
+
+cd Day3/refactored_playbook-v2
+ansible-playbook  install-nginx-playbook.yml
+```
+
+Expected output
+```
 ```

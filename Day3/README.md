@@ -311,4 +311,5 @@ git pull
 
 cd Day3/loops/sequence
 ansible-playbook  provision-containers-playbook.yml
+ansible-playbook  provision-containers-playbook.yml --ask-become-pass
 ```

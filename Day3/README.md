@@ -12,8 +12,8 @@ docker images
 
 ### Testing the image
 ```
-docker run -d --name centos1 --hostname centos1 -p 2003:22 -p 8003:22 tektutor/ansible-centos:latest
-docker run -d --name centos2 --hostname centos2 -p 2004:22 -p 8004:22 tektutor/ansible-centos:latest
+docker run -d --name centos1 --hostname centos1 -p 2003:22 -p 8003:80 tektutor/ansible-centos:latest
+docker run -d --name centos2 --hostname centos2 -p 2004:22 -p 8004:80 tektutor/ansible-centos:latest
 ```
 
 Try to SSH into the containers

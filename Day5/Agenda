@@ -1,9 +1,9 @@
 Today's Agenda
 ++++++++++++++
-1. Ansible Recommended Directory Structure
+1. Ansible Recommended Directory Structure - Done
 2. Python Basics
 3. Dynamic Inventory
-4. Ansible Vault
+4. Ansible Vault - done
 5. Modules
   - Git
   - Git_config

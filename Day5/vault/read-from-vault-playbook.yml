@@ -1,0 +1,6 @@
+- name: Playbook fetches credential from a vault protected file
+  hosts: localhost
+  vars_files:
+  - dbserver-credentials.yml 
+  tasks:
+  - debug: msg="{{username}}={{password}}"

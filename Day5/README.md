@@ -1,6 +1,6 @@
 # Day 5
 
-## Lab - Ansible Recommended Folder Structure for Inventory
+## ⛹️‍♂️ Lab - Ansible Recommended Folder Structure for Inventory
 ```
 cd ~/ansible-jan-2023
 git pull
@@ -8,7 +8,7 @@ cd Day5/RecommendedDirectroyStructure/
 ansible all -m ping
 ```
 
-## Lab - Ansible vault
+## 🚴‍♀️ Lab - Ansible vault
 ```
 cd ~/ansible-jan-2023
 git pull
@@ -25,7 +25,7 @@ ansible-vault edit dbserver-credentials.yml
 ```
 When it prompts for password, you need to type 'root' without quotes as the password.
 
-## Lab - Handlers and Notifiers
+## 🚵‍♂️ Lab - Handlers and Notifiers
 
 ```
 cd ~/ansible-jan-2023
@@ -35,7 +35,7 @@ cd Day5/HandlersAndNotifiers/
 ansible-playbook handler-and-notifiers-playbook.yml
 ```
 
-## Lab - Cloning a GitHub Repo using Ansible Playbook
+## ⛹️ Lab - Cloning a GitHub Repo using Ansible Playbook
 ```
 cd ~/ansible-jan-2023
 git pull

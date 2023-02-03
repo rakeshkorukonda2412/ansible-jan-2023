@@ -1,0 +1,15 @@
+- name: Playbook does git config
+  hosts: localhost
+  tasks:
+  - name: Configure your local git
+    git_config:
+      name: alias.ci
+      scope: global
+      value: commit
+
+  - name: Add a setting to ~/.gitconfig
+    community.general.git_config:
+      name: core.editor
+      scope: global
+      value: vim
+

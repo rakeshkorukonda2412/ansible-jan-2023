@@ -1,0 +1,25 @@
+- name: Install nginx and start the server
+  hosts: all
+  tasks:
+  - name: Install nginx web server in Ubuntu
+    when: ansible_distribution == "Ubuntu"
+    apt: name=nginx state=latest update_cache=yes
+    notify:
+    - Restart nginx web server in Ubuntu
+
+  - name: Install Extra Packages for Enterprise Linux (EPEL) 
+    when: ansible_distribution == "CentOS"
+    yum: name=epel-release state=latest
+
+  - name: Install nginx web server in CentOS
+    when: ansible_distribution == "CentOS"
+    yum: name=nginx state=latest
+    notify:
+    - Restart nginx web server in CentOS
+
+  handlers:
+  - name: Restart nginx web server in Ubuntu
+    shell: service nginx start
+
+  - name: Restart nginx web server in CentOS
+    shell: /usr/sbin/nginx

@@ -43,3 +43,12 @@ git pull
 cd Day5/git-clone/
 ansible-playbook git-clone-playbook.yml
 ```
+
+## ⛹️ Lab - Configuring your local git using Ansible Playbook
+```
+cd ~/ansible-jan-2023
+git pull
+
+cd Day5/git-config/
+ansible-playbook playbook.yml
+```

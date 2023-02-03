@@ -1,0 +1,2 @@
+[all]
+52.142.48.56 ansible_user=jegan ansible_password=Admin@123456 ansible_connection=winrm ansible_winrm_server_cert_validation=ignore ansible_winrm_transport=basic

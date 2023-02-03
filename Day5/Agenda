@@ -1,0 +1,10 @@
+Today's Agenda
+++++++++++++++
+1. Ansible Recommended Directory Structure
+2. Python Basics
+3. Dynamic Inventory
+4. Ansible Vault
+5. Modules
+  - Git
+  - Git_config
+6. Handlers and Notifiers

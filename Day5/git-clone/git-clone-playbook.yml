@@ -1,0 +1,10 @@
+- name: Let's clone a GitHub repo using ansible playbook
+  hosts: localhost
+  tasks:
+  - name: Create an empty directory to clone the GitHub repo
+    file: path=./tmp state=directory mode=0755
+
+  - name: Clone TekTutor's repository
+    git:
+      repo: https://github.com/tektutor/spring-ms.git
+      dest: ./tmp 

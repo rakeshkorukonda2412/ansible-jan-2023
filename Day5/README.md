@@ -34,3 +34,12 @@ git pull
 cd Day5/HandlersAndNotifiers/
 ansible-playbook handler-and-notifiers-playbook.yml
 ```
+
+## Lab - Cloning a GitHub Repo using Ansible Playbook
+```
+cd ~/ansible-jan-2023
+git pull
+
+cd Day5/git-clone/
+ansible-playbook git-clone-playbook.yml
+```

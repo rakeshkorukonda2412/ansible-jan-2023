@@ -1,6 +1,6 @@
 # Day 6
 
-## Lab - Writing a custom module and invoking it from a playbook
+## ⛹️‍♂️ Lab - Writing a custom module and invoking it from a playbook
 
 ```
 cd ~/ansible-jan-2023

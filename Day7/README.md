@@ -1,5 +1,10 @@
 # Day7
 
+## Ansible Tower opensource Installation (AWX)
+```
+https://github.com/ansible/awx-operator
+```
+
 ## What is Ansible Role?
 - role is a reusable code
 - roles can't be executed independently

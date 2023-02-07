@@ -1,0 +1,4 @@
+---
+# handlers file for nginx
+- include_tasks: restart-nginx-ubuntu.yml
+- include_tasks: restart-nginx-centos.yml

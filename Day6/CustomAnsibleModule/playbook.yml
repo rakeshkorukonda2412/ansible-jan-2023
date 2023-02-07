@@ -1,5 +1,5 @@
 - name: Invokes custom ansible module
-  hosts: localhost
+  hosts: all 
   tasks:
   - name: Invoke hello custom module
     hello: message="Hello Custom Ansible Module !"
@@ -14,3 +14,13 @@
     register: result
 
   - debug: var=result
+
+  - name: Retrieve IP ansible node IP address
+    get_ip:
+    register: result
+    tags:
+    - ip
+
+  - debug: var=result
+    tags:
+    - ip

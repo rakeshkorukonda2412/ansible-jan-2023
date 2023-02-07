@@ -1,0 +1,10 @@
+- name: Check if nginx web server is already up and running
+  shell: curl localhost 
+  register: output
+  ignore_errors: true
+
+- name: Configure nginx web root folder in CentOS
+  when: ansible_distribution == "CentOS"
+  copy: src=nginx.conf dest=/etc/nginx/nginx.conf 
+  notify:
+  - Start the nginx web server service in CentOS

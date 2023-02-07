@@ -1,0 +1,4 @@
+---
+# vars file for nginx
+greeting_msg: DevOps!
+conf_mgr_tool: Ansible

@@ -1,0 +1,3 @@
+- name: Start the nginx web server service in CentOS 
+  when: output.rc != 0
+  shell: /usr/sbin/nginx 

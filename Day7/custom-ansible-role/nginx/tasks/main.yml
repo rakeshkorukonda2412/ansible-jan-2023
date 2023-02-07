@@ -1,0 +1,6 @@
+---
+# tasks file for nginx
+- include_tasks: install-nginx-ubuntu.yml
+- include_tasks: install-nginx-centos.yml
+- include_tasks: configure-nginx-ubuntu.yml
+- include_tasks: configure-nginx-centos.yml

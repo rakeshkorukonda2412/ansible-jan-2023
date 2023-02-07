@@ -19,6 +19,14 @@
   - name: Copy the public key to current directory
     shell: cp ~/.ssh/id_rsa.pub authorized_keys
 
+#  - name: Install Python Package Manager(pip) in Ubuntu
+#    when: ansible_distribution == "Ubuntu"
+#    apt: name=python3-pip state=latest update_cache=yes
+
+  - name: Install Docker Python SDK in Ubuntu
+    when: ansible_distribution == "Ubuntu"
+    shell: pip install docker
+
   - name: Build ubuntu ansible node docker image
     docker_image:
       name: tektutor/ansible-ubuntu:latest

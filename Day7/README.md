@@ -5,6 +5,11 @@
 https://github.com/ansible/awx-operator
 ```
 
+## Installing Ansible Tower in Ubuntu
+```
+https://cloudinfrastructureservices.co.uk/how-to-install-ansible-awx-tower-on-ubuntu-20-04-server/
+```
+
 ## What is Ansible Role?
 - role is a reusable code
 - roles can't be executed independently

@@ -14,6 +14,11 @@ https://github.com/ansible/awx-operator
 - roles directory structure can be created using ansible-galaxy tool
 - there is also a galaxy web portal that has many reusable opensource roles that you install using ansible-galaxy tool
 
+## Ansible Galaxy portal
+```
+https://galaxy.ansible.com/home
+```
+
 ## ⛹️‍♂️ Lab - Using custom ansible role in Playbook
 ```
 cd ~/ansible-jan-2023

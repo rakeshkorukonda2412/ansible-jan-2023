@@ -9,7 +9,7 @@
 - roles directory structure can be created using ansible-galaxy tool
 - there is also a galaxy web portal that has many reusable opensource roles that you install using ansible-galaxy tool
 
-## Lab - Using custom ansible role in Playbook
+## ⛹️‍♂️ Lab - Using custom ansible role in Playbook
 ```
 cd ~/ansible-jan-2023
 git pull

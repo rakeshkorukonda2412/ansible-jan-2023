@@ -1,5 +1,10 @@
 - name: Builds a custom docker image
   hosts: localhost
+  vars:
+  - docker_image_names:
+    - tektutor/ansible-ubuntu:latest
+    - tektutor/ansible-centos:latest
+    
   tasks:
 
   - name: Delete any containers if exists
@@ -7,8 +12,9 @@
     ignore_errors: true
 
   - name: Remove existing image
-    shell: docker rmi tektutor/ansible-ubuntu:latest
+    shell: docker rmi "{{item}}" 
     ignore_errors: true
+    with_lists: "{{docker_image_names}}"
 
   - name: Copy the public key to current directory
     shell: cp ~/.ssh/id_rsa.pub authorized_keys
@@ -19,9 +25,20 @@
       state: present
       source: build
       build:
-        dockerfile: Dockerfile
+        dockerfile: UbuntuDockerfile
         path: .
         pull: no
+
+  - name: Build centos ansible node docker image
+    docker_image:
+      name: tektutor/ansible-centos:latest
+      state: present
+      source: build
+      build:
+        dockerfile: CentOSDockerfile
+        path: .
+        pull: no
+
 
   - name: Delete the authorized_keys
     shell: rm ./authorized_keys

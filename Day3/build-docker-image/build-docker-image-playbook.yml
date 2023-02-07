@@ -12,9 +12,9 @@
     ignore_errors: true
 
   - name: Remove existing image
-    shell: docker rmi "{{item}}" 
+    shell: "docker rmi {{item}}" 
     ignore_errors: true
-    with_lists: "{{docker_image_names}}"
+    with_list: "{{docker_image_names}}"
 
   - name: Copy the public key to current directory
     shell: cp ~/.ssh/id_rsa.pub authorized_keys
@@ -25,7 +25,8 @@
 
   - name: Install Docker Python SDK in Ubuntu
     when: ansible_distribution == "Ubuntu"
-    shell: pip install docker
+    shell: pip3 install --user docker
+    delegate_to: localhost 
 
   - name: Build ubuntu ansible node docker image
     docker_image:

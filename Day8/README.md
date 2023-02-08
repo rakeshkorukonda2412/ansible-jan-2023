@@ -51,6 +51,11 @@
 ## What is Continuous Delivery (CD)?
 - automated delivery of QA certified binaries to the customer's environemtn ( pre-prod environment )
 
+## Medium blog that has step by step instructions to configure Jenkins
+```
+https://medium.com/tektutor/ci-cd-with-maven-github-docker-jenkins-aca28c252fec
+```
+
 ## Download jenkins from jenkins.io/Download
 ```
 cd ~/Downloads

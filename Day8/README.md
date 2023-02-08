@@ -63,6 +63,13 @@ cd ~/Downloads
 java -jar ./jenkins.war
 ```
 
+You need to install the below plugin in Jenkins
+1. Ansible
+2. Ansible Tower
+3. Maven Integration
+4. Docker
+5. Build Pipeline
+
 ## Installing Maven 
 ```
 cd ~/Downloads

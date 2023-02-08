@@ -62,3 +62,18 @@ Starting jenkins
 cd ~/Downloads
 java -jar ./jenkins.war
 ```
+
+## Installing Maven 
+```
+cd ~/Downloads
+wget https://dlcdn.apache.org/maven/maven-3/3.9.0/binaries/apache-maven-3.9.0-bin.tar.gz
+tar xvfz apache-maven-3.9.0-bin.tar.gz
+cd apache-maven-3.9.0
+pwd
+```
+
+## Installing Docker in Ubuntu
+```
+sudo apt-get update
+sudo apt-get install -y docker.io
+```

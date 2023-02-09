@@ -1,5 +1,7 @@
 - name: Builds a custom docker image
   hosts: localhost
+  connection: local
+
   vars:
   - docker_image_names:
     - tektutor/ansible-ubuntu:latest
@@ -19,9 +21,10 @@
   - name: Copy the public key to current directory
     shell: cp ~/.ssh/id_rsa.pub authorized_keys
 
-#  - name: Install Python Package Manager(pip) in Ubuntu
-#    when: ansible_distribution == "Ubuntu"
-#    apt: name=python3-pip state=latest update_cache=yes
+    #  - name: Install Python Package Manager(pip) in Ubuntu
+    #when: ansible_distribution == "Ubuntu"
+    #apt: name=python3-pip state=latest update_cache=yes
+    #shell: python3 -m pip install pip
 
   - name: Install Docker Python SDK in Ubuntu
     when: ansible_distribution == "Ubuntu"
